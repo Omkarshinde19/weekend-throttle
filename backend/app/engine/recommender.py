@@ -14,7 +14,7 @@ from .route_facts import compute_route_fit, public
 ROUTE_SUMMARY_KEYS = (
     "id", "name", "region", "summary", "start", "end", "distance_km", "duration_min", "surface",
     "road_quality", "curvature", "difficulty", "elevation_gain_m", "tags", "hazards", "night_safe",
-    "best_seasons", "max_fuel_gap_km", "viewpoints", "verified",
+    "best_seasons", "max_fuel_gap_km", "viewpoints", "geometry", "verified",
 )
 
 
