@@ -1,4 +1,4 @@
-import type { RecommendRequest, RecommendResponse, RulesResponse, SunInfo, Weather } from "./types";
+import type { Pitstop, RecommendRequest, RecommendResponse, Route, RulesResponse, SunInfo, Weather } from "./types";
 
 const BASE = import.meta.env.VITE_API_URL ?? "/api";
 
@@ -30,6 +30,8 @@ export const api = {
   recommend: (body: RecommendRequest, signal?: AbortSignal) =>
     request<RecommendResponse>("/recommend", { method: "POST", body: JSON.stringify(body), signal }),
   rules: () => request<RulesResponse>("/rules"),
+  routes: () => request<Route[]>("/routes"),
+  pitstops: () => request<Pitstop[]>("/pitstops"),
   sun: (lat: number, lng: number) => request<SunInfo>(`/sun?lat=${lat}&lng=${lng}`),
   weather: (lat: number, lng: number) => request<Weather>(`/weather?lat=${lat}&lng=${lng}`),
 };
