@@ -1,0 +1,257 @@
+.hero {
+  position: relative;
+  height: 300vh;
+}
+
+.hero__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Stars: three tiled dot fields at different sizes. */
+.hero__stars {
+  position: absolute;
+  inset: 0 0 35% 0;
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 140px 80px, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1.5px 1.5px at 260px 160px, rgba(255, 255, 255, 0.85), transparent),
+    radial-gradient(1px 1px at 330px 40px, rgba(200, 215, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 80px 210px, rgba(255, 255, 255, 0.6), transparent);
+  background-size: 360px 260px;
+  mask-image: linear-gradient(180deg, #000 30%, transparent);
+  animation: twinkle 6s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  to {
+    filter: brightness(0.6);
+  }
+}
+
+.hero__sun {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  width: 46vmin;
+  height: 46vmin;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff1dc 0%, #ffc89a 18%, rgba(242, 179, 139, 0.45) 40%, transparent 70%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* ---------- Wordmark ---------- */
+
+.wordmark {
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  transform: translate3d(-50%, calc(-50% + 7vh), 0);
+  display: grid;
+  place-items: center;
+  will-change: transform;
+  pointer-events: none;
+}
+
+.wordmark__latin,
+.wordmark__deva {
+  grid-area: 1 / 1;
+  margin: 0;
+  white-space: nowrap;
+  color: var(--snow);
+  line-height: 1;
+  text-shadow: 0 0 60px rgba(160, 180, 255, 0.25);
+}
+
+.wordmark__latin {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-variation-settings: "opsz" 144;
+  font-size: clamp(110px, 25vw, 440px);
+  letter-spacing: 0.02em;
+}
+
+.wordmark__deva {
+  font-family: var(--font-deva);
+  font-weight: 300;
+  font-size: clamp(100px, 22vw, 380px);
+}
+
+.glyph {
+  display: inline-block;
+  will-change: opacity, filter, transform;
+}
+
+.wordmark__deva .glyph {
+  opacity: 0;
+}
+
+/* ---------- Copy & CTA ---------- */
+
+.hero__copy {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  color: var(--snow);
+}
+
+.hero__eyebrow {
+  margin-top: max(96px, 14vh);
+  opacity: 0.75;
+  text-align: center;
+  padding: 0 16px;
+}
+
+.hero__accent {
+  position: absolute;
+  top: 61%;
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(22px, 2.6vw, 38px);
+  letter-spacing: 0.01em;
+  color: rgba(238, 242, 251, 0.85);
+}
+
+.hero__accent em {
+  color: var(--dawn-peach);
+}
+
+.hero__cta {
+  position: absolute;
+  top: 70%;
+  pointer-events: auto;
+  padding: 16px 30px;
+  border: 1.5px solid rgba(238, 242, 251, 0.85);
+  border-radius: var(--r-pill);
+  color: var(--snow);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  backdrop-filter: blur(6px);
+  background: rgba(7, 11, 29, 0.15);
+  transition: background 0.35s var(--ease-out), color 0.35s var(--ease-out), transform 0.35s var(--ease-out);
+}
+
+.hero__cta:hover {
+  background: var(--snow);
+  color: var(--night-1);
+  transform: translateY(-2px);
+}
+
+/* ---------- Scroll cue (left) ---------- */
+
+.hero__scrollcue {
+  position: absolute;
+  left: 34px;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  color: rgba(238, 242, 251, 0.7);
+}
+
+.hero__scrollcue .eyebrow {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 9px;
+}
+
+.hero__scrollcue i {
+  position: relative;
+  width: 1px;
+  height: 120px;
+  background: rgba(238, 242, 251, 0.3);
+  overflow: hidden;
+}
+
+.hero__scrollcue i::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1px;
+  height: 40px;
+  background: var(--snow);
+  animation: cue 2.2s var(--ease-in-out) infinite;
+}
+
+@keyframes cue {
+  from {
+    transform: translateY(-40px);
+  }
+  to {
+    transform: translateY(120px);
+  }
+}
+
+/* ---------- Live chips (bottom right) ---------- */
+
+.hero__live {
+  position: absolute;
+  right: 28px;
+  bottom: 32px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--r-pill);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--snow);
+  background: rgba(238, 242, 251, 0.1);
+  border: 1px solid rgba(238, 242, 251, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.chip--icon {
+  width: 34px;
+  padding: 0;
+  justify-content: center;
+}
+
+.chip__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.chip__dot--sun {
+  background: var(--dawn-peach);
+  box-shadow: 0 0 10px var(--dawn-peach);
+}
+
+@media (max-width: 640px) {
+  .hero__scrollcue {
+    display: none;
+  }
+  .hero__live {
+    left: 16px;
+    right: 16px;
+    justify-content: center;
+  }
+  .hero__cta {
+    top: 68%;
+  }
+  .hero__accent {
+    top: 58%;
+  }
+}
