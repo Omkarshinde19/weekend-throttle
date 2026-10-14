@@ -1,0 +1,17 @@
+.fx {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+/* Behind the page content, in front of the sky. */
+.fx--back {
+  z-index: -1;
+}
+
+/* Over everything, including cards: the near flakes and the settled snow live here. */
+.fx--front {
+  z-index: 60;
+}
