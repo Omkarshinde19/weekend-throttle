@@ -71,13 +71,14 @@ export function RideMap({ recs, selected }: { recs: Recommendation[]; selected: 
   const sunAz = useStore((s) => s.result?.context.derived);
 
   useEffect(() => {
+    setReady(false);
     const map = new maplibregl.Map({
       container: holder.current!,
       style: STYLE,
       center: [PUNE.lng - 0.25, PUNE.lat + 0.05],
       zoom: 8.6,
       attributionControl: { compact: true },
-      cooperativeGestures: false,
+      cooperativeGestures: true, // page scroll stays page scroll; ctrl/⌘ + scroll zooms
     });
     mapRef.current = map;
     if (import.meta.env.DEV) (window as unknown as { __map: MLMap }).__map = map;
@@ -153,10 +154,11 @@ export function RideMap({ recs, selected }: { recs: Recommendation[]; selected: 
 
   useEffect(() => {
     const map = mapRef.current;
-    if (!map || !ready) return;
+    const routesSrc = map?.getSource("routes") as GeoJSONSource | undefined;
+    if (!map || !ready || !routesSrc) return;
     const current = recs[selected];
 
-    (map.getSource("routes") as GeoJSONSource).setData({
+    routesSrc.setData({
       type: "FeatureCollection",
       // Selected route last so it draws on top.
       features: recs
