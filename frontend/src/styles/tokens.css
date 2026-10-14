@@ -1,0 +1,60 @@
+/*
+ * Design tokens.
+ * The page travels from Ladakh blue hour (night) → sunrise (dawn) → warm stone (day).
+ * `--sky-*` and `--page-*` are driven from scroll position by useDawn().
+ */
+:root {
+  /* night */
+  --night-0: #070b1d;
+  --night-1: #101a3a;
+  --night-2: #23305e;
+  --night-haze: #6f7fb3;
+  --snow: #eef2fb;
+
+  /* dawn */
+  --dawn-peach: #f2b38b;
+  --dawn-rose: #d98c8c;
+  --dawn-cream: #f6d7b8;
+
+  /* day — the dashboard palette (stone, sand, charcoal) */
+  --sand-0: #f5f0e9;
+  --sand-1: #ebe3d8;
+  --sand-2: #dcd1c2;
+  --stone: #b9ad9c;
+  --ink: #1d1b18;
+  --ink-2: #47423b;
+  --muted: #8a8276;
+  --copper: #a8643a;
+  --gold: #d9a25b;
+  --sage: #6c8a5a;
+  --rust: #b3543a;
+
+  /* glass */
+  --glass: rgba(255, 255, 255, 0.52);
+  --glass-strong: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.65);
+  --glass-shadow: 0 30px 60px -30px rgba(40, 30, 20, 0.35), 0 2px 6px rgba(40, 30, 20, 0.06);
+  --blur: 18px;
+
+  /* type */
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-deva: "Noto Serif Devanagari", "Fraunces", serif;
+  --font-ui: "Manrope", system-ui, -apple-system, sans-serif;
+
+  /* shape */
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-xl: 36px;
+  --r-pill: 999px;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* scroll-driven (defaults = top of page) */
+  --dawn: 0;
+  --sky-top: var(--night-0);
+  --sky-mid: var(--night-1);
+  --sky-low: var(--night-2);
+}
