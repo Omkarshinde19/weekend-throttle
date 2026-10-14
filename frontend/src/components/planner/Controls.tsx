@@ -138,7 +138,7 @@ export function Controls() {
           Time I have <output>{inputs.budget} h</output>
         </legend>
         <input
-          className="range"
+          className="slider"
           type="range"
           min={2}
           max={10}
