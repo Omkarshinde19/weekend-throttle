@@ -1,0 +1,13 @@
+[
+  {"id": "A_RAIN_GEAR", "icon": "rain", "when": {"fact": "derived.rain_level", "op": "in", "value": ["light", "moderate", "heavy"]}, "text": "Pack a rain liner, waterproof gloves and an anti-fog insert for your visor."},
+  {"id": "A_HEAVY_RAIN", "icon": "shield", "when": {"fact": "derived.rain_level", "op": "eq", "value": "heavy"}, "text": "Heavy rain: double your following distance and avoid painted road markings and metal plates."},
+  {"id": "A_FOG", "icon": "fog", "when": {"fact": "derived.visibility", "op": "eq", "value": "low"}, "text": "Fog on the ghats: ride on low beam, hazard lights on when stopped, wear a hi-vis layer."},
+  {"id": "A_NIGHT", "icon": "moon", "when": {"fact": "derived.night_mode", "op": "eq", "value": true}, "text": "Night ride: check headlight aim, carry a reflective vest and a power bank."},
+  {"id": "A_PREDAWN", "icon": "moon", "when": {"fact": "derived.predawn", "op": "eq", "value": true}, "text": "Pre-dawn ride: clean your visor, use high beam only on empty roads, and watch for dogs and cattle on the road."},
+  {"id": "A_HEAT", "icon": "thermometer", "when": {"fact": "derived.heat_stress", "op": "eq", "value": true}, "text": "It's {ctx.weather.temp_c}°C — carry at least 1 L of water and take shade breaks."},
+  {"id": "A_COLD", "icon": "thermometer", "when": {"fact": "derived.cold", "op": "eq", "value": true}, "text": "It's {ctx.weather.temp_c}°C and colder on the ghat tops — add a thermal layer and neck warmer."},
+  {"id": "A_GOLDEN_HOUR", "icon": "camera", "when": {"fact": "derived.photo_target", "op": "in", "value": ["sunset", "sunrise"]}, "text": "Golden hour ({derived.photo_target} at {derived.golden_moment}): reach the viewpoint 20 min early and carry a polariser / ND filter."},
+  {"id": "A_LANDSLIDE", "icon": "warning", "when": {"fact": "derived.landslide_risk", "op": "eq", "value": "high"}, "text": "High landslide risk — check local news / traffic police updates for ghat closures before leaving."},
+  {"id": "A_PILLION", "icon": "users", "when": {"fact": "derived.pillion_comfort", "op": "eq", "value": true}, "text": "Pillion on board: adjust rear preload and agree on tap signals before you set off."},
+  {"id": "A_CROWDS", "icon": "clock", "when": {"fact": "derived.crowd_expected", "op": "eq", "value": true}, "text": "Weekend crowds expected — leave early or expect slow traffic near the popular points."}
+]
