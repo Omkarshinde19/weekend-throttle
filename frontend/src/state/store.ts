@@ -6,6 +6,7 @@ import type {
   Intent,
   LatLng,
   RecommendResponse,
+  Route,
   WeatherCondition,
 } from "../api/types";
 
@@ -27,16 +28,16 @@ export interface Inputs {
 interface State {
   inputs: Inputs;
   result: RecommendResponse | null;
+  allRoutes: Route[];
   loading: boolean;
   error: string | null;
   selected: number; // index into result.recommendations
-  detailOpen: boolean;
   engineOpen: boolean;
   set: <K extends keyof Inputs>(key: K, value: Inputs[K]) => void;
   select: (index: number) => void;
-  openDetail: (open: boolean) => void;
   openEngine: (open: boolean) => void;
   fetch: () => Promise<void>;
+  loadRoutes: () => Promise<void>;
 }
 
 function istToday(offsetDays = 0): string {
@@ -88,10 +89,10 @@ export const useStore = create<State>((set, get) => ({
     weather: "live",
   },
   result: null,
+  allRoutes: [],
   loading: false,
   error: null,
   selected: 0,
-  detailOpen: false,
   engineOpen: false,
 
   set: (key, value) => {
@@ -102,8 +103,15 @@ export const useStore = create<State>((set, get) => ({
   },
 
   select: (index) => set({ selected: index }),
-  openDetail: (open) => set({ detailOpen: open }),
   openEngine: (open) => set({ engineOpen: open }),
+
+  loadRoutes: async () => {
+    try {
+      set({ allRoutes: await api.routes() });
+    } catch {
+      // The map just won't show ruled-out routes.
+    }
+  },
 
   fetch: async () => {
     controller?.abort();
