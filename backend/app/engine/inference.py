@@ -9,6 +9,7 @@
 
 from __future__ import annotations
 
+import json
 import math
 
 from .conditions import MISSING, evaluate, get_fact, render, set_fact
@@ -16,11 +17,15 @@ from .conditions import MISSING, evaluate, get_fact, render, set_fact
 SCORE_SPREAD = 45  # +45 points of evidence moves the score from 50 to ~73
 
 
+def _show(value) -> str:
+    return json.dumps(value) if isinstance(value, (bool, str)) or value is None else str(value)
+
+
 def _apply_actions(then: dict, facts: dict) -> list[str]:
     effects = []
     for path, value in then.get("set", {}).items():
         set_fact(facts, path, value)
-        effects.append(f"{path} = {value}")
+        effects.append(f"{path} = {_show(value)}")
     for path, factor in then.get("multiply", {}).items():
         current = get_fact(facts, path)
         if current is MISSING or current is None:
