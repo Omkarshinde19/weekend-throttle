@@ -1,0 +1,57 @@
+{
+  "cruiser": {
+    "label": "Cruiser",
+    "examples": ["Royal Enfield Classic 350", "Meteor 350", "Harley X440"],
+    "pace_factor": 1.05,
+    "approach_speed_kmh": 42,
+    "break_interval_min": 90,
+    "range_km": 280,
+    "offroad": "none",
+    "loves": ["highway", "scenic", "lake", "cruise", "smooth"],
+    "dislikes": ["steep_hairpins", "offroad"]
+  },
+  "sports": {
+    "label": "Sportsbike",
+    "examples": ["Yamaha R15", "KTM RC 390", "Kawasaki Ninja 300"],
+    "pace_factor": 0.9,
+    "approach_speed_kmh": 45,
+    "break_interval_min": 60,
+    "range_km": 220,
+    "offroad": "none",
+    "loves": ["twisty", "smooth", "ghat"],
+    "dislikes": ["potholes", "offroad", "waterlogging"]
+  },
+  "adventure": {
+    "label": "Adventure",
+    "examples": ["Royal Enfield Himalayan", "KTM 390 Adventure", "Hero Xpulse 200"],
+    "pace_factor": 1.0,
+    "approach_speed_kmh": 43,
+    "break_interval_min": 80,
+    "range_km": 350,
+    "offroad": "full",
+    "loves": ["offroad", "remote", "forest", "plateau", "waterfalls"],
+    "dislikes": []
+  },
+  "street": {
+    "label": "Street / Naked",
+    "examples": ["KTM Duke 390", "TVS Apache RTR 200", "Bajaj Pulsar NS200"],
+    "pace_factor": 0.95,
+    "approach_speed_kmh": 44,
+    "break_interval_min": 75,
+    "range_km": 240,
+    "offroad": "light",
+    "loves": ["twisty", "scenic", "ghat", "food_hub"],
+    "dislikes": ["offroad"]
+  },
+  "scooter": {
+    "label": "Scooter",
+    "examples": ["Honda Activa", "TVS Ntorq", "Ather 450X"],
+    "pace_factor": 1.3,
+    "approach_speed_kmh": 34,
+    "break_interval_min": 50,
+    "range_km": 140,
+    "offroad": "none",
+    "loves": ["short", "lake", "leisure", "food_hub", "city_view"],
+    "dislikes": ["highway", "steep_hairpins", "offroad", "remote"]
+  }
+}
