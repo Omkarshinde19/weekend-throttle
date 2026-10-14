@@ -1,0 +1,60 @@
+[
+  {"id": "ps_pirangut_fuel", "name": "Pirangut fuel station", "type": "fuel", "route_id": "tamhini_ghat", "at_km": 1, "rating": 3.8, "covered": true, "opens": "00:00", "closes": "23:59", "parking": "good", "specialities": []},
+  {"id": "ps_mulshi_tapri", "name": "Mulshi bend chai tapri", "type": "chai_tapri", "route_id": "tamhini_ghat", "at_km": 20, "rating": 4.4, "covered": false, "opens": "06:30", "closes": "19:30", "parking": "ok", "specialities": ["cutting chai", "bhaji"]},
+  {"id": "ps_tamhini_dhaba", "name": "Tamhini village dhaba", "type": "dhaba", "route_id": "tamhini_ghat", "at_km": 36, "rating": 4.2, "covered": true, "opens": "08:00", "closes": "21:00", "parking": "good", "specialities": ["misal pav", "vada pav", "kanda bhaji"]},
+  {"id": "ps_tamhini_plateau", "name": "Tamhini plateau pull-out", "type": "viewpoint_parking", "route_id": "tamhini_ghat", "at_km": 40, "rating": 4.6, "covered": false, "opens": "00:00", "closes": "23:59", "parking": "ok", "specialities": ["valley view"]},
+
+  {"id": "ps_talegaon_cafe", "name": "Talegaon highway biker cafe", "type": "biker_cafe", "route_id": "khandala_old_highway", "at_km": 14, "rating": 4.3, "covered": true, "opens": "07:00", "closes": "23:00", "parking": "good", "specialities": ["coffee", "sandwiches", "bike-friendly parking"]},
+  {"id": "ps_kamshet_fuel", "name": "Kamshet fuel station", "type": "fuel", "route_id": "khandala_old_highway", "at_km": 22, "rating": 3.7, "covered": true, "opens": "00:00", "closes": "23:59", "parking": "good", "specialities": []},
+  {"id": "ps_lonavala_vadapav", "name": "Lonavala market vada pav stall", "type": "chai_tapri", "route_id": "khandala_old_highway", "at_km": 42, "rating": 4.5, "covered": true, "opens": "08:00", "closes": "22:00", "parking": "poor", "specialities": ["vada pav", "chikki", "chai"]},
+  {"id": "ps_khandala_corn", "name": "Khandala ghat corn & chai stalls", "type": "chai_tapri", "route_id": "khandala_old_highway", "at_km": 49, "rating": 4.1, "covered": false, "opens": "09:00", "closes": "20:00", "parking": "ok", "specialities": ["bhutta", "chai"]},
+
+  {"id": "ps_tiger_point_stalls", "name": "Tiger Point bhaji stalls", "type": "chai_tapri", "route_id": "lions_point", "at_km": 10, "rating": 4.4, "covered": false, "opens": "08:00", "closes": "19:30", "parking": "ok", "specialities": ["kanda bhaji", "maggi", "chai"]},
+  {"id": "ps_lions_point_parking", "name": "Lion's Point parking", "type": "viewpoint_parking", "route_id": "lions_point", "at_km": 14, "rating": 4.7, "covered": false, "opens": "06:00", "closes": "20:00", "parking": "good", "specialities": ["sunset view"]},
+  {"id": "ps_lonavala_cafe", "name": "Lonavala lakeside cafe", "type": "biker_cafe", "route_id": "lions_point", "at_km": 3, "rating": 4.2, "covered": true, "opens": "08:00", "closes": "22:30", "parking": "good", "specialities": ["coffee", "pasta"]},
+
+  {"id": "ps_khadakwasla_tapri", "name": "Khadakwasla dam chai tapri", "type": "chai_tapri", "route_id": "sinhagad_ghat", "at_km": 1, "rating": 4.0, "covered": false, "opens": "05:30", "closes": "21:00", "parking": "ok", "specialities": ["cutting chai", "bhutta"]},
+  {"id": "ps_sinhagad_top", "name": "Sinhagad fort-top stalls", "type": "dhaba", "route_id": "sinhagad_ghat", "at_km": 22, "rating": 4.6, "covered": true, "opens": "06:00", "closes": "18:30", "parking": "ok", "specialities": ["pithla bhakri", "kanda bhaji", "matka dahi"]},
+
+  {"id": "ps_mulshi_lake_dhaba", "name": "Mulshi lakeside dhaba", "type": "dhaba", "route_id": "mulshi_lake_loop", "at_km": 18, "rating": 4.3, "covered": true, "opens": "08:00", "closes": "22:00", "parking": "good", "specialities": ["thali", "misal"]},
+  {"id": "ps_mulshi_dam_tapri", "name": "Mulshi dam chai tapri", "type": "chai_tapri", "route_id": "mulshi_lake_loop", "at_km": 33, "rating": 4.1, "covered": false, "opens": "07:00", "closes": "19:00", "parking": "ok", "specialities": ["chai", "poha"]},
+
+  {"id": "ps_kamshet_tapri", "name": "Kamshet station chai tapri", "type": "chai_tapri", "route_id": "pawna_lake", "at_km": 1, "rating": 4.0, "covered": true, "opens": "06:00", "closes": "21:00", "parking": "ok", "specialities": ["chai", "vada pav"]},
+  {"id": "ps_pawna_cafe", "name": "Pawna lake camp cafe", "type": "biker_cafe", "route_id": "pawna_lake", "at_km": 24, "rating": 4.3, "covered": true, "opens": "09:00", "closes": "23:00", "parking": "good", "specialities": ["bbq", "coffee"]},
+
+  {"id": "ps_rajgurunagar_fuel", "name": "Rajgurunagar fuel station", "type": "fuel", "route_id": "malshej_ghat", "at_km": 2, "rating": 3.8, "covered": true, "opens": "00:00", "closes": "23:59", "parking": "good", "specialities": []},
+  {"id": "ps_narayangaon_misal", "name": "Narayangaon misal house", "type": "dhaba", "route_id": "malshej_ghat", "at_km": 40, "rating": 4.5, "covered": true, "opens": "07:00", "closes": "21:30", "parking": "good", "specialities": ["misal pav", "sabudana vada"]},
+  {"id": "ps_junnar_fuel", "name": "Junnar fuel station", "type": "fuel", "route_id": "malshej_ghat", "at_km": 55, "rating": 3.6, "covered": true, "opens": "06:00", "closes": "22:00", "parking": "good", "specialities": []},
+  {"id": "ps_malshej_resort", "name": "Malshej ghat-top restaurant", "type": "restaurant", "route_id": "malshej_ghat", "at_km": 90, "rating": 4.1, "covered": true, "opens": "08:00", "closes": "21:00", "parking": "good", "specialities": ["thali", "pakoda", "valley view"]},
+
+  {"id": "ps_bhor_fuel", "name": "Bhor fuel station", "type": "fuel", "route_id": "varandha_ghat", "at_km": 1, "rating": 3.6, "covered": true, "opens": "06:00", "closes": "22:00", "parking": "good", "specialities": []},
+  {"id": "ps_varandha_tapri", "name": "Varandha ghat chai tapri", "type": "chai_tapri", "route_id": "varandha_ghat", "at_km": 28, "rating": 4.3, "covered": false, "opens": "07:00", "closes": "18:00", "parking": "ok", "specialities": ["chai", "bhaji"]},
+
+  {"id": "ps_dive_ghat_tapri", "name": "Dive Ghat top chai tapri", "type": "chai_tapri", "route_id": "dive_ghat", "at_km": 18, "rating": 4.2, "covered": false, "opens": "05:30", "closes": "20:00", "parking": "ok", "specialities": ["chai", "bhutta"]},
+  {"id": "ps_saswad_misal", "name": "Saswad misal joint", "type": "dhaba", "route_id": "dive_ghat", "at_km": 29, "rating": 4.4, "covered": true, "opens": "07:00", "closes": "21:00", "parking": "good", "specialities": ["misal pav", "sheera"]},
+
+  {"id": "ps_wai_breakfast", "name": "Wai ghat-side breakfast", "type": "dhaba", "route_id": "pasarni_mahabaleshwar", "at_km": 2, "rating": 4.3, "covered": true, "opens": "07:00", "closes": "21:00", "parking": "good", "specialities": ["poha", "misal", "chai"]},
+  {"id": "ps_pasarni_tapri", "name": "Pasarni ghat chai stop", "type": "chai_tapri", "route_id": "pasarni_mahabaleshwar", "at_km": 15, "rating": 4.1, "covered": false, "opens": "07:00", "closes": "19:00", "parking": "ok", "specialities": ["chai", "bhaji"]},
+  {"id": "ps_mahabaleshwar_strawberry", "name": "Mahabaleshwar strawberry & cream stalls", "type": "restaurant", "route_id": "pasarni_mahabaleshwar", "at_km": 35, "rating": 4.6, "covered": true, "opens": "09:00", "closes": "22:00", "parking": "ok", "specialities": ["strawberry cream", "corn pattice"]},
+
+  {"id": "ps_manchar_dhaba", "name": "Manchar highway dhaba", "type": "dhaba", "route_id": "bhimashankar", "at_km": 25, "rating": 4.2, "covered": true, "opens": "07:00", "closes": "23:00", "parking": "good", "specialities": ["thali", "misal"]},
+  {"id": "ps_ghodegaon_fuel", "name": "Ghodegaon fuel station", "type": "fuel", "route_id": "bhimashankar", "at_km": 35, "rating": 3.6, "covered": true, "opens": "06:00", "closes": "22:00", "parking": "good", "specialities": []},
+  {"id": "ps_bhimashankar_stalls", "name": "Bhimashankar temple stalls", "type": "chai_tapri", "route_id": "bhimashankar", "at_km": 74, "rating": 4.0, "covered": true, "opens": "06:00", "closes": "19:00", "parking": "ok", "specialities": ["chai", "pithla bhakri"]},
+
+  {"id": "ps_dasve_cafe", "name": "Dasve lakeside cafe", "type": "biker_cafe", "route_id": "lavasa_road", "at_km": 50, "rating": 4.2, "covered": true, "opens": "09:00", "closes": "22:00", "parking": "good", "specialities": ["coffee", "pizza"]},
+  {"id": "ps_lavasa_tapri", "name": "Lavasa road chai tapri", "type": "chai_tapri", "route_id": "lavasa_road", "at_km": 25, "rating": 4.3, "covered": false, "opens": "06:30", "closes": "19:00", "parking": "ok", "specialities": ["chai", "maggi"]},
+
+  {"id": "ps_rajmachi_homestay", "name": "Udhewadi village homestay kitchen", "type": "dhaba", "route_id": "rajmachi_trail", "at_km": 16, "rating": 4.4, "covered": true, "opens": "07:00", "closes": "20:00", "parking": "ok", "specialities": ["home-style thali", "chai"]},
+
+  {"id": "ps_panshet_tapri", "name": "Panshet dam chai tapri", "type": "chai_tapri", "route_id": "panshet_dam", "at_km": 33, "rating": 4.0, "covered": false, "opens": "07:00", "closes": "19:00", "parking": "ok", "specialities": ["chai", "bhutta"]},
+  {"id": "ps_panshet_dhaba", "name": "Panshet road dhaba", "type": "dhaba", "route_id": "panshet_dam", "at_km": 18, "rating": 4.1, "covered": true, "opens": "08:00", "closes": "22:00", "parking": "good", "specialities": ["thali", "bhaji"]},
+
+  {"id": "ps_shirwal_cafe", "name": "Shirwal highway food plaza", "type": "biker_cafe", "route_id": "khambatki_highway", "at_km": 45, "rating": 4.2, "covered": true, "opens": "00:00", "closes": "23:59", "parking": "good", "specialities": ["coffee", "vada pav", "clean washrooms"]},
+  {"id": "ps_khandala_satara_fuel", "name": "Khandala (Satara) fuel station", "type": "fuel", "route_id": "khambatki_highway", "at_km": 60, "rating": 3.9, "covered": true, "opens": "00:00", "closes": "23:59", "parking": "good", "specialities": []},
+  {"id": "ps_satara_kandi", "name": "Satara kandi pedha & chai", "type": "chai_tapri", "route_id": "khambatki_highway", "at_km": 104, "rating": 4.3, "covered": true, "opens": "08:00", "closes": "21:00", "parking": "ok", "specialities": ["kandi pedha", "chai"]},
+
+  {"id": "ps_shirota_tapri", "name": "Shirota village tapri", "type": "chai_tapri", "route_id": "shirota_trail", "at_km": 12, "rating": 3.9, "covered": false, "opens": "07:00", "closes": "18:00", "parking": "ok", "specialities": ["chai"]},
+
+  {"id": "ps_pune_mechanic_bhor", "name": "Bhor road mechanic", "type": "mechanic", "route_id": "varandha_ghat", "at_km": 3, "rating": 4.0, "covered": true, "opens": "09:00", "closes": "20:00", "parking": "good", "specialities": ["puncture repair", "chain service"]},
+  {"id": "ps_lonavala_mechanic", "name": "Lonavala bike mechanic", "type": "mechanic", "route_id": "rajmachi_trail", "at_km": 0, "rating": 4.1, "covered": true, "opens": "09:00", "closes": "20:00", "parking": "good", "specialities": ["puncture repair"]}
+]
