@@ -1,5 +1,6 @@
 import { Loader2, RefreshCw } from "lucide-react";
 import { useStore } from "../../state/store";
+import { ErrorBoundary } from "../ErrorBoundary";
 import { Controls } from "./Controls";
 import { AdviceStrip, FeaturedRide, GoldenCard, RideStats } from "./ResultCards";
 import { Excluded, Pitstops, Timeline, WhyPanel } from "./RideDetail";
@@ -57,7 +58,15 @@ export function Planner() {
 
         <div className="planner__results">
           <div className="planner__map-wrap">
-            <RideMap recs={result?.recommendations ?? []} selected={selected} />
+            <ErrorBoundary
+              fallback={
+                <div className="ride-map">
+                  <div className="ride-map__fallback">The map couldn't start in this browser.</div>
+                </div>
+              }
+            >
+              <RideMap recs={result?.recommendations ?? []} selected={selected} />
+            </ErrorBoundary>
             <EngineStatus />
           </div>
 
