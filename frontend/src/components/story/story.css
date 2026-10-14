@@ -1,0 +1,221 @@
+.story {
+  /* Text switches from snow-white to ink as the sky brightens. */
+  --story-ink: color-mix(in srgb, var(--snow), var(--ink) calc(clamp(0, (var(--dawn) - 0.55) * 3.5, 1) * 100%));
+  position: relative;
+  padding: 18vh 6vw 22vh;
+  color: var(--story-ink);
+}
+
+/* ---------- The road ---------- */
+
+.switchbacks {
+  position: absolute;
+  inset: 26vh 0 14vh 0;
+  pointer-events: none;
+}
+
+.switchbacks svg {
+  overflow: visible;
+}
+
+.switchbacks__shoulder {
+  fill: none;
+  stroke: color-mix(in srgb, var(--snow) 10%, transparent);
+  stroke-width: 30;
+  stroke-linecap: round;
+}
+
+.switchbacks__road {
+  fill: none;
+  stroke: color-mix(in srgb, #1c2042, #6b5a66 calc(var(--dawn) * 100%));
+  stroke-width: 26;
+  stroke-linecap: round;
+  opacity: 0.9;
+}
+
+.switchbacks__paint {
+  fill: none;
+  stroke: rgba(255, 244, 220, 0.75);
+  stroke-width: 1.6;
+  stroke-dasharray: 10 16;
+}
+
+.switchbacks__lamp {
+  transition: opacity 0.3s;
+}
+
+.switchbacks__lamp circle {
+  fill: #fff3d6;
+  filter: drop-shadow(0 0 10px #ffd27a) drop-shadow(0 0 22px #ffb85c);
+}
+
+.switchbacks__beam {
+  fill: rgba(255, 230, 170, 0.28);
+  filter: blur(4px);
+}
+
+/* ---------- Heading ---------- */
+
+.story__head {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 14vh;
+  text-align: center;
+}
+
+.story__head .eyebrow {
+  opacity: 0.7;
+}
+
+.story__head h2 {
+  margin: 18px 0 0;
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(38px, 6vw, 84px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.story__head em {
+  font-style: italic;
+  color: var(--dawn-peach);
+}
+
+.story__hint {
+  margin-top: 26px;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+/* ---------- Steps ---------- */
+
+.story__steps {
+  position: relative;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1180px;
+  display: grid;
+  gap: 18vh;
+}
+
+.story__step {
+  display: flex;
+}
+
+.story__step--right {
+  justify-content: flex-end;
+}
+
+.story__card {
+  width: min(520px, 100%);
+  border-radius: var(--r-lg);
+  box-shadow: 0 40px 80px -40px rgba(10, 10, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.story__card-inner {
+  padding: 34px 34px 30px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--ink);
+  border-radius: var(--r-lg);
+}
+
+.story__num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--copper);
+}
+
+.story__card h3 {
+  margin: 8px 0 10px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 34px;
+  letter-spacing: -0.01em;
+}
+
+.story__card p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.story__chips,
+.story__chain {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.story__chips span,
+.story__chain span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: var(--r-pill);
+  background: var(--sand-1);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.story__chain span:last-child {
+  background: var(--ink);
+  color: var(--sand-0);
+}
+
+/* ---------- Stats strip (villa-style) ---------- */
+
+.story__stats {
+  position: relative;
+  margin: 20vh auto 0;
+  max-width: 980px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 30px 12px;
+  border-radius: var(--r-xl);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--blur));
+  box-shadow: var(--glass-shadow);
+  color: var(--ink);
+}
+
+.story__stats div {
+  text-align: center;
+  padding: 0 12px;
+}
+
+.story__stats div + div {
+  border-left: 1px solid rgba(29, 27, 24, 0.1);
+}
+
+.story__stats dt {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 300;
+}
+
+.story__stats dd {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--ink-2);
+}
+
+@media (max-width: 720px) {
+  .story__step,
+  .story__step--right {
+    justify-content: center;
+  }
+  .story__stats {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 24px;
+  }
+  .story__stats div:nth-child(3) {
+    border-left: 0;
+  }
+}

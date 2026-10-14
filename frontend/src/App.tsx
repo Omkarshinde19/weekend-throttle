@@ -2,6 +2,7 @@ import { useCallback, useEffect } from "react";
 import { WeatherFX } from "./components/fx/WeatherFX";
 import { Hero } from "./components/hero/Hero";
 import { Nav } from "./components/nav/Nav";
+import { Story } from "./components/story/Story";
 import { useDawn } from "./hooks/useDawn";
 import { useStore } from "./state/store";
 
@@ -24,7 +25,7 @@ export function App() {
       <Nav onPlan={goPlan} />
       <main>
         <Hero onPlan={goPlan} />
-        <section id="story" style={{ height: "150vh" }} />
+        <Story />
         <section id="planner" style={{ minHeight: "120vh" }} />
       </main>
     </>
