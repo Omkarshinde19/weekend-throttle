@@ -28,16 +28,28 @@ class KnowledgeBase:
     advice_rules: list[dict]
 
 
+def _point_along(geometry: list[list[float]], t: float) -> tuple[float, float]:
+    """(lat, lng) at fraction t of a [lng, lat] polyline's length."""
+    seg = [((b[0] - a[0]) ** 2 + (b[1] - a[1]) ** 2) ** 0.5 for a, b in zip(geometry, geometry[1:])]
+    target, walked = sum(seg) * t, 0.0
+    for (a, b), length in zip(zip(geometry, geometry[1:]), seg):
+        if walked + length >= target and length > 0:
+            f = (target - walked) / length
+            return a[1] + (b[1] - a[1]) * f, a[0] + (b[0] - a[0]) * f
+        walked += length
+    return geometry[-1][1], geometry[-1][0]
+
+
 def _place_pitstop(stop: dict, route: dict) -> dict:
-    """Pitstops without coordinates are placed proportionally between route start and end."""
+    """Pitstops without coordinates are placed proportionally along the route's road geometry."""
     if "lat" in stop and "lng" in stop:
         return {**stop, "approx_position": False}
     t = min(1.0, max(0.0, stop["at_km"] / route["distance_km"]))
-    s, e = route["start"], route["end"]
+    lat, lng = _point_along(route["geometry"], t)
     return {
         **stop,
-        "lat": round(s["lat"] + (e["lat"] - s["lat"]) * t, 5),
-        "lng": round(s["lng"] + (e["lng"] - s["lng"]) * t, 5),
+        "lat": round(lat, 5),
+        "lng": round(lng, 5),
         "approx_position": True,
         "verified": stop.get("verified", False),
     }
@@ -54,7 +66,9 @@ def _check_unique_ids(*rule_sets: list[dict]) -> None:
 
 @lru_cache(maxsize=1)
 def load_kb() -> KnowledgeBase:
-    routes = _load("routes.json")
+    geometry = _load("geometry.json")
+    routes = [{**r, "geometry": geometry.get(r["id"], [[r["start"]["lng"], r["start"]["lat"]], [r["end"]["lng"], r["end"]["lat"]]])}
+              for r in _load("routes.json")]
     routes_by_id = {r["id"]: r for r in routes}
 
     pitstops = []
