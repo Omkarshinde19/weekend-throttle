@@ -160,6 +160,10 @@ def test_knowledge_base_is_consistent():
             assert 0 <= vp["facing_deg"] < 360
     for stop in KB.pitstops:
         assert 0 <= stop["at_km"] <= KB.routes_by_id[stop["route_id"]]["distance_km"], stop["id"]
+    for route in KB.routes:
+        assert len(route["geometry"]) >= 2, route["id"]
+        lng, lat = route["geometry"][0]
+        assert abs(lat - route["start"]["lat"]) < 0.05 and abs(lng - route["start"]["lng"]) < 0.05, route["id"]
     for rule in KB.route_rules:
         assert rule["type"] in ("filter", "score", "warn")
 
