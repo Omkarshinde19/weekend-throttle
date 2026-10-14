@@ -1,4 +1,6 @@
 import { useCallback, useEffect } from "react";
+import { EngineRoom } from "./components/engine/EngineRoom";
+import { Footer } from "./components/Footer";
 import { WeatherFX } from "./components/fx/WeatherFX";
 import { Hero } from "./components/hero/Hero";
 import { Nav } from "./components/nav/Nav";
@@ -31,6 +33,8 @@ export function App() {
         <Story />
         <Planner />
       </main>
+      <Footer />
+      <EngineRoom />
     </>
   );
 }
