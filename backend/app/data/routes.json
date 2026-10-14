@@ -1,0 +1,311 @@
+[
+  {
+    "id": "tamhini_ghat",
+    "name": "Tamhini Ghat via Mulshi",
+    "region": "Mulshi",
+    "summary": "Classic monsoon ghat — waterfalls on every bend, Mulshi backwaters, and a plateau that looks over the Konkan.",
+    "start": {"name": "Pirangut", "lat": 18.5089, "lng": 73.6808},
+    "end": {"name": "Tamhini Ghat top", "lat": 18.4300, "lng": 73.4100},
+    "distance_km": 45, "duration_min": 75,
+    "surface": "paved", "road_quality": 3, "curvature": 0.75, "difficulty": 3, "elevation_gain_m": 450,
+    "tags": ["twisty", "scenic", "waterfalls", "forest", "ghat", "plateau"],
+    "hazards": ["landslide_prone", "fog_prone", "potholes"],
+    "night_safe": false,
+    "best_seasons": ["monsoon", "post_monsoon", "winter"],
+    "max_fuel_gap_km": 45,
+    "viewpoints": [
+      {"name": "Mulshi backwaters bend", "at_km": 22, "lat": 18.5100, "lng": 73.5200, "facing_deg": 220, "kind": "lake"},
+      {"name": "Tamhini plateau edge", "at_km": 40, "lat": 18.4450, "lng": 73.4280, "facing_deg": 255, "kind": "valley"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "khandala_old_highway",
+    "name": "Old Mumbai–Pune Highway to Khandala",
+    "region": "Lonavala",
+    "summary": "Easy-going highway climb into Lonavala–Khandala with chikki shops, vada pav and the Duke's Nose view.",
+    "start": {"name": "Dehu Road", "lat": 18.6788, "lng": 73.7376},
+    "end": {"name": "Khandala", "lat": 18.7590, "lng": 73.3720},
+    "distance_km": 50, "duration_min": 75,
+    "surface": "paved", "road_quality": 4, "curvature": 0.35, "difficulty": 2, "elevation_gain_m": 300,
+    "tags": ["highway", "scenic", "ghat", "food_hub", "hill_station"],
+    "hazards": ["heavy_traffic_weekend", "fog_prone"],
+    "night_safe": true,
+    "best_seasons": ["monsoon", "post_monsoon", "winter", "summer"],
+    "max_fuel_gap_km": 15,
+    "viewpoints": [
+      {"name": "Rajmachi Point", "at_km": 47, "lat": 18.7680, "lng": 73.3840, "facing_deg": 10, "kind": "fort"},
+      {"name": "Duke's Nose view, Khandala ghat", "at_km": 50, "lat": 18.7560, "lng": 73.3700, "facing_deg": 280, "kind": "valley"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "lions_point",
+    "name": "Lonavala to Lion's Point",
+    "region": "Lonavala",
+    "summary": "Short plateau road out of Lonavala to the most famous sunset ledge in the area.",
+    "start": {"name": "Lonavala", "lat": 18.7546, "lng": 73.4062},
+    "end": {"name": "Lion's Point", "lat": 18.7050, "lng": 73.3750},
+    "distance_km": 14, "duration_min": 30,
+    "surface": "paved", "road_quality": 4, "curvature": 0.55, "difficulty": 2, "elevation_gain_m": 120,
+    "tags": ["scenic", "twisty", "hill_station", "plateau", "short", "sunset_spot"],
+    "hazards": ["fog_prone", "heavy_traffic_weekend"],
+    "night_safe": false,
+    "best_seasons": ["monsoon", "post_monsoon", "winter"],
+    "max_fuel_gap_km": 20,
+    "viewpoints": [
+      {"name": "Tiger Point", "at_km": 10, "lat": 18.7130, "lng": 73.3800, "facing_deg": 240, "kind": "valley"},
+      {"name": "Lion's Point", "at_km": 14, "lat": 18.7050, "lng": 73.3750, "facing_deg": 262, "kind": "sunset"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "sinhagad_ghat",
+    "name": "Sinhagad Ghat Road",
+    "region": "Khadakwasla",
+    "summary": "Steep hairpins up to the fort, pithla-bhakri at the top and a sunrise over Pune.",
+    "start": {"name": "Khadakwasla", "lat": 18.4410, "lng": 73.7700},
+    "end": {"name": "Sinhagad fort parking", "lat": 18.3664, "lng": 73.7559},
+    "distance_km": 22, "duration_min": 45,
+    "surface": "paved", "road_quality": 3, "curvature": 0.85, "difficulty": 4, "elevation_gain_m": 700,
+    "tags": ["twisty", "fort", "short", "ghat", "sunrise_spot", "food_hub"],
+    "hazards": ["steep_hairpins", "heavy_traffic_weekend", "fog_prone"],
+    "night_safe": false,
+    "best_seasons": ["monsoon", "post_monsoon", "winter", "summer"],
+    "max_fuel_gap_km": 22,
+    "viewpoints": [
+      {"name": "Sinhagad east rampart", "at_km": 22, "lat": 18.3670, "lng": 73.7590, "facing_deg": 80, "kind": "sunrise"},
+      {"name": "Tanaji Kada", "at_km": 22, "lat": 18.3640, "lng": 73.7520, "facing_deg": 265, "kind": "fort"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "mulshi_lake_loop",
+    "name": "Mulshi Lake Loop",
+    "region": "Mulshi",
+    "summary": "Relaxed lakeside ride with gentle curves and plenty of places to stop for chai.",
+    "start": {"name": "Pirangut", "lat": 18.5089, "lng": 73.6808},
+    "end": {"name": "Mulshi dam", "lat": 18.5180, "lng": 73.5130},
+    "distance_km": 35, "duration_min": 55,
+    "surface": "paved", "road_quality": 4, "curvature": 0.45, "difficulty": 1, "elevation_gain_m": 150,
+    "tags": ["lake", "scenic", "leisure", "short", "forest", "smooth"],
+    "hazards": ["waterlogging"],
+    "night_safe": false,
+    "best_seasons": ["monsoon", "post_monsoon", "winter", "summer"],
+    "max_fuel_gap_km": 30,
+    "viewpoints": [
+      {"name": "Mulshi dam backwaters", "at_km": 34, "lat": 18.5170, "lng": 73.5150, "facing_deg": 255, "kind": "lake"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "pawna_lake",
+    "name": "Kamshet to Pawna Lake",
+    "region": "Maval",
+    "summary": "Countryside roads to a wide lake framed by Tikona and Tung forts — great for golden-hour silhouettes.",
+    "start": {"name": "Kamshet", "lat": 18.7600, "lng": 73.5520},
+    "end": {"name": "Pawna Lake", "lat": 18.6720, "lng": 73.4950},
+    "distance_km": 25, "duration_min": 45,
+    "surface": "paved", "road_quality": 3, "curvature": 0.4, "difficulty": 2, "elevation_gain_m": 100,
+    "tags": ["lake", "camping", "scenic", "fort", "leisure", "sunset_spot"],
+    "hazards": ["potholes"],
+    "night_safe": false,
+    "best_seasons": ["monsoon", "post_monsoon", "winter", "summer"],
+    "max_fuel_gap_km": 30,
+    "viewpoints": [
+      {"name": "Pawna lakeshore", "at_km": 25, "lat": 18.6720, "lng": 73.4950, "facing_deg": 250, "kind": "sunset"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "malshej_ghat",
+    "name": "Malshej Ghat via Junnar",
+    "region": "Junnar",
+    "summary": "Long monsoon pilgrimage — roadside waterfalls, clouds rolling over the road and a dramatic western drop.",
+    "start": {"name": "Rajgurunagar", "lat": 18.8610, "lng": 73.8860},
+    "end": {"name": "Malshej Ghat", "lat": 19.3400, "lng": 73.7800},
+    "distance_km": 95, "duration_min": 150,
+    "surface": "paved", "road_quality": 3, "curvature": 0.6, "difficulty": 3, "elevation_gain_m": 400,
+    "tags": ["ghat", "waterfalls", "scenic", "monsoon_special", "birding", "plateau"],
+    "hazards": ["landslide_prone", "fog_prone", "potholes"],
+    "night_safe": false,
+    "best_seasons": ["monsoon", "post_monsoon"],
+    "max_fuel_gap_km": 50,
+    "viewpoints": [
+      {"name": "Malshej ghat edge", "at_km": 92, "lat": 19.3350, "lng": 73.7750, "facing_deg": 285, "kind": "valley"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "varandha_ghat",
+    "name": "Varandha Ghat from Bhor",
+    "region": "Bhor",
+    "summary": "Remote, tight and wild — one of the twistiest roads near Pune, best with an experienced rider.",
+    "start": {"name": "Bhor", "lat": 18.1500, "lng": 73.8450},
+    "end": {"name": "Varandha Ghat top", "lat": 18.1180, "lng": 73.6040},
+    "distance_km": 35, "duration_min": 70,
+    "surface": "paved", "road_quality": 2, "curvature": 0.8, "difficulty": 4, "elevation_gain_m": 500,
+    "tags": ["twisty", "ghat", "waterfalls", "remote", "forest", "monsoon_special"],
+    "hazards": ["landslide_prone", "potholes", "fog_prone"],
+    "night_safe": false,
+    "best_seasons": ["monsoon", "post_monsoon", "winter"],
+    "max_fuel_gap_km": 60,
+    "viewpoints": [
+      {"name": "Varandha top", "at_km": 30, "lat": 18.1200, "lng": 73.6150, "facing_deg": 260, "kind": "valley"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "dive_ghat",
+    "name": "Dive Ghat to Saswad",
+    "region": "Saswad",
+    "summary": "Smooth, wide hairpins just outside the city — a quick fix with a view back over Pune.",
+    "start": {"name": "Hadapsar", "lat": 18.4900, "lng": 73.9300},
+    "end": {"name": "Saswad", "lat": 18.3430, "lng": 74.0310},
+    "distance_km": 30, "duration_min": 45,
+    "surface": "paved", "road_quality": 5, "curvature": 0.6, "difficulty": 2, "elevation_gain_m": 250,
+    "tags": ["twisty", "short", "city_view", "sunrise_spot", "smooth"],
+    "hazards": ["heavy_traffic_weekend"],
+    "night_safe": true,
+    "best_seasons": ["monsoon", "post_monsoon", "winter", "summer"],
+    "max_fuel_gap_km": 15,
+    "viewpoints": [
+      {"name": "Dive Ghat top", "at_km": 18, "lat": 18.4150, "lng": 73.9900, "facing_deg": 315, "kind": "city"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "pasarni_mahabaleshwar",
+    "name": "Pasarni Ghat to Mahabaleshwar",
+    "region": "Satara",
+    "summary": "Long day out — Wai temples, Pasarni switchbacks and both a sunrise and a sunset point at the top.",
+    "start": {"name": "Wai", "lat": 17.9530, "lng": 73.8910},
+    "end": {"name": "Mahabaleshwar", "lat": 17.9237, "lng": 73.6586},
+    "distance_km": 38, "duration_min": 75,
+    "surface": "paved", "road_quality": 4, "curvature": 0.7, "difficulty": 3, "elevation_gain_m": 900,
+    "tags": ["twisty", "ghat", "hill_station", "scenic", "food_hub", "sunrise_spot", "sunset_spot"],
+    "hazards": ["heavy_traffic_weekend", "fog_prone"],
+    "night_safe": false,
+    "best_seasons": ["post_monsoon", "winter", "summer"],
+    "max_fuel_gap_km": 30,
+    "viewpoints": [
+      {"name": "Wilson Point", "at_km": 33, "lat": 17.9280, "lng": 73.6700, "facing_deg": 95, "kind": "sunrise"},
+      {"name": "Bombay Point", "at_km": 36, "lat": 17.9330, "lng": 73.6450, "facing_deg": 265, "kind": "sunset"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "bhimashankar",
+    "name": "Bhimashankar Forest Road",
+    "region": "Ambegaon",
+    "summary": "Dense forest, giant squirrel country and a jyotirlinga at the end — gorgeous green in the monsoon.",
+    "start": {"name": "Rajgurunagar", "lat": 18.8610, "lng": 73.8860},
+    "end": {"name": "Bhimashankar", "lat": 19.0720, "lng": 73.5360},
+    "distance_km": 75, "duration_min": 130,
+    "surface": "paved", "road_quality": 3, "curvature": 0.6, "difficulty": 3, "elevation_gain_m": 600,
+    "tags": ["forest", "ghat", "temple", "waterfalls", "wildlife", "monsoon_special"],
+    "hazards": ["fog_prone", "potholes", "wildlife"],
+    "night_safe": false,
+    "best_seasons": ["monsoon", "post_monsoon", "winter"],
+    "max_fuel_gap_km": 45,
+    "viewpoints": [
+      {"name": "Nagphani Point", "at_km": 75, "lat": 19.0700, "lng": 73.5300, "facing_deg": 270, "kind": "valley"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "lavasa_road",
+    "name": "Lavasa Road via Dasve",
+    "region": "Mulshi",
+    "summary": "Smooth tarmac carved into the hills with lake views below — a sportsbike favourite.",
+    "start": {"name": "Chandni Chowk", "lat": 18.5050, "lng": 73.7840},
+    "end": {"name": "Lavasa", "lat": 18.4080, "lng": 73.5070},
+    "distance_km": 55, "duration_min": 85,
+    "surface": "paved", "road_quality": 4, "curvature": 0.8, "difficulty": 3, "elevation_gain_m": 550,
+    "tags": ["twisty", "lake", "scenic", "smooth", "ghat"],
+    "hazards": ["fog_prone", "landslide_prone"],
+    "night_safe": false,
+    "best_seasons": ["monsoon", "post_monsoon", "winter", "summer"],
+    "max_fuel_gap_km": 40,
+    "viewpoints": [
+      {"name": "Temghar backwater viewpoint", "at_km": 40, "lat": 18.4400, "lng": 73.5500, "facing_deg": 225, "kind": "lake"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "rajmachi_trail",
+    "name": "Rajmachi Trail",
+    "region": "Lonavala",
+    "summary": "Rocky dirt track from Lonavala to the twin forts of Rajmachi — proper adventure-bike terrain.",
+    "start": {"name": "Tungarli, Lonavala", "lat": 18.7600, "lng": 73.4100},
+    "end": {"name": "Udhewadi, Rajmachi", "lat": 18.8290, "lng": 73.3990},
+    "distance_km": 16, "duration_min": 75,
+    "surface": "dirt", "road_quality": 1, "curvature": 0.5, "difficulty": 5, "elevation_gain_m": 200,
+    "tags": ["offroad", "fort", "forest", "remote", "fireflies"],
+    "hazards": ["waterlogging", "steep_hairpins", "wildlife"],
+    "night_safe": false,
+    "best_seasons": ["post_monsoon", "winter", "summer"],
+    "max_fuel_gap_km": 20,
+    "viewpoints": [
+      {"name": "Rajmachi plateau", "at_km": 16, "lat": 18.8290, "lng": 73.3990, "facing_deg": 280, "kind": "fort"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "panshet_dam",
+    "name": "Khadakwasla to Panshet",
+    "region": "Velhe",
+    "summary": "Flat, relaxed ride along the dam backwaters — perfect for a first group ride or a scooter outing.",
+    "start": {"name": "Khadakwasla", "lat": 18.4410, "lng": 73.7700},
+    "end": {"name": "Panshet dam", "lat": 18.3870, "lng": 73.6120},
+    "distance_km": 35, "duration_min": 55,
+    "surface": "paved", "road_quality": 3, "curvature": 0.35, "difficulty": 1, "elevation_gain_m": 80,
+    "tags": ["lake", "leisure", "scenic", "short", "water_sports"],
+    "hazards": ["potholes"],
+    "night_safe": false,
+    "best_seasons": ["monsoon", "post_monsoon", "winter", "summer"],
+    "max_fuel_gap_km": 30,
+    "viewpoints": [
+      {"name": "Panshet backwaters", "at_km": 34, "lat": 18.3880, "lng": 73.6150, "facing_deg": 250, "kind": "lake"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "khambatki_highway",
+    "name": "NH48 Cruise to Satara via Khambatki",
+    "region": "Satara",
+    "summary": "Wide, smooth highway with one tunnel-and-ghat section — long-distance cruiser comfort.",
+    "start": {"name": "Katraj", "lat": 18.4480, "lng": 73.8580},
+    "end": {"name": "Satara", "lat": 17.6800, "lng": 74.0180},
+    "distance_km": 105, "duration_min": 110,
+    "surface": "paved", "road_quality": 5, "curvature": 0.2, "difficulty": 1, "elevation_gain_m": 200,
+    "tags": ["highway", "cruise", "ghat", "smooth"],
+    "hazards": ["heavy_traffic_weekend"],
+    "night_safe": true,
+    "best_seasons": ["monsoon", "post_monsoon", "winter", "summer"],
+    "max_fuel_gap_km": 25,
+    "viewpoints": [
+      {"name": "Khambatki ghat bend", "at_km": 50, "lat": 18.0500, "lng": 73.9700, "facing_deg": 180, "kind": "valley"}
+    ],
+    "verified": false
+  },
+  {
+    "id": "shirota_trail",
+    "name": "Kamshet to Shirota Dam Trail",
+    "region": "Maval",
+    "summary": "Broken tarmac fading into village tracks, ending at a quiet dam few people know about.",
+    "start": {"name": "Kamshet", "lat": 18.7600, "lng": 73.5520},
+    "end": {"name": "Shirota dam", "lat": 18.7900, "lng": 73.4500},
+    "distance_km": 20, "duration_min": 60,
+    "surface": "mixed", "road_quality": 2, "curvature": 0.4, "difficulty": 4, "elevation_gain_m": 150,
+    "tags": ["offroad", "lake", "remote", "forest"],
+    "hazards": ["waterlogging", "potholes"],
+    "night_safe": false,
+    "best_seasons": ["post_monsoon", "winter", "summer"],
+    "max_fuel_gap_km": 30,
+    "viewpoints": [
+      {"name": "Shirota lake bank", "at_km": 18, "lat": 18.7880, "lng": 73.4560, "facing_deg": 260, "kind": "lake"}
+    ],
+    "verified": false
+  }
+]
