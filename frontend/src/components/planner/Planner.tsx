@@ -1,12 +1,15 @@
+import { lazy, Suspense } from "react";
 import { Loader2, RefreshCw } from "lucide-react";
 import { useStore } from "../../state/store";
 import { ErrorBoundary } from "../ErrorBoundary";
 import { Controls } from "./Controls";
 import { AdviceStrip, FeaturedRide, GoldenCard, RideStats } from "./ResultCards";
 import { Excluded, Pitstops, Timeline, WhyPanel } from "./RideDetail";
-import { RideMap } from "./RideMap";
 import { SideRail } from "./SideRail";
 import "./planner.css";
+
+// MapLibre is ~800 kB — load it after the hero has painted.
+const RideMap = lazy(() => import("./RideMap").then((m) => ({ default: m.RideMap })));
 
 function EngineStatus() {
   const loading = useStore((s) => s.loading);
@@ -65,7 +68,9 @@ export function Planner() {
                 </div>
               }
             >
-              <RideMap recs={result?.recommendations ?? []} selected={selected} />
+              <Suspense fallback={<div className="ride-map ride-map--loading" />}>
+                <RideMap recs={result?.recommendations ?? []} selected={selected} />
+              </Suspense>
             </ErrorBoundary>
             <EngineStatus />
           </div>

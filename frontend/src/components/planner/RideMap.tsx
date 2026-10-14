@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import maplibregl, { GeoJSONSource, LngLatBoundsLike, Map as MLMap, Marker } from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
 import type { Recommendation, Route, Viewpoint } from "../../api/types";
 import { PUNE, useStore } from "../../state/store";
 
