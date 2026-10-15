@@ -16,3 +16,9 @@ dist/
 
 # TypeScript incremental build info
 *.tsbuildinfo
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+.vercel
