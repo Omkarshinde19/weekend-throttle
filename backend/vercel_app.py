@@ -1,18 +1,13 @@
-"""Vercel serverless entry point.
+"""Vercel entry point for the backend service (see vercel.json → services.backend).
 
-Vercel serves the built React app as static files and routes every /api/* request here
-(see vercel.json). The FastAPI backend is mounted under /api so the frontend can call
-/api/recommend on the same domain, exactly like the Vite dev proxy does locally.
+Vercel routes every /api/* request to this service and passes the original path
+(/api/recommend, not /recommend), so the engine is mounted under /api — the same paths
+the frontend uses with the Vite dev proxy locally.
 """
 
-import sys
-from pathlib import Path
+from fastapi import FastAPI
 
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "backend"))
-
-from fastapi import FastAPI  # noqa: E402
-
-from app.main import app as engine  # noqa: E402
+from app.main import app as engine
 
 app = FastAPI(title="Weekend Throttle", docs_url=None, redoc_url=None)
 app.mount("/api", engine)
