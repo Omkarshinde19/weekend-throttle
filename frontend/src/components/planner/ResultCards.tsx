@@ -1,5 +1,7 @@
-import { ArrowLeft, ArrowRight, ArrowUpRight, Clock, Fuel, MapPin, Moon, Route as RouteIcon, Sunrise, Sunset } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Clock, Fuel, Link2, MapPin, Moon, Route as RouteIcon, Sunrise, Sunset } from "lucide-react";
 import type { Recommendation, RecommendResponse } from "../../api/types";
+import { shareUrl } from "../../state/persist";
 import { useStore } from "../../state/store";
 import { RoutePostcard } from "./RoutePostcard";
 import { ScoreRing } from "./ScoreRing";
@@ -47,6 +49,7 @@ export function FeaturedRide({ result, rec }: { result: RecommendResponse; rec: 
             </div>
           </div>
           <div className="featured__nav">
+            <ShareButton />
             <button className="round" onClick={() => select((i - 1 + total) % total)} aria-label="Previous ride">
               <ArrowLeft size={16} />
             </button>
@@ -62,6 +65,25 @@ export function FeaturedRide({ result, rec }: { result: RecommendResponse; rec: 
         </div>
       </div>
     </article>
+  );
+}
+
+function ShareButton() {
+  const inputs = useStore((s) => s.inputs);
+  const [copied, setCopied] = useState(false);
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl(inputs));
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    } catch {
+      window.prompt("Copy this ride link:", shareUrl(inputs));
+    }
+  };
+  return (
+    <button className="round" onClick={copy} aria-label="Copy a link to this ride setup" title={copied ? "Link copied" : "Copy ride link"}>
+      {copied ? <Check size={16} /> : <Link2 size={16} />}
+    </button>
   );
 }
 
