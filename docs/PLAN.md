@@ -144,17 +144,22 @@ trace        → every rule that fired, in order (for the engine room / debug dr
 
 ---
 
-## 4. Suggested screens (for UI design hunting)
+## 4. What's built
 
-1. **Ride setup** — big tappable cards for intent & bike, time slider, weather chip (live / simulate), pillion toggle.
-2. **Results** — map on one side, ranked route cards on the other; score ring, tag chips, warnings.
-3. **Route detail** — timeline (leave-by → stops → viewpoint at golden hour → home), pitstop list, "Why this route?" panel.
-4. **What-if drawer** — sliders that re-run the engine live; excluded routes fade out with their reason.
-5. **Engine room** — the rule base as cards, highlighting which fired for the current query.
+| Screen / feature | Status | Where |
+|---|---|---|
+| Hero — INDIA behind a generated Ladakh range, morphs to भारत on scroll | ✅ | `frontend/src/components/hero` |
+| Dawn scroll (night → sunrise → day palette) | ✅ | `hooks/useDawn.ts` |
+| Weather particles: 3 depth layers, snow settles on text/cards, rain/fog/storm/dust follow the engine | ✅ | `lib/weatherScene.ts` |
+| Switchback road drawn on scroll, frost-wipe cards | ✅ | `components/story`, `components/fx/Frost.tsx` |
+| Planner: controls, sun-dial time picker, MapLibre map with sun cones, ranked cards (A2 what-if) | ✅ | `components/planner` |
+| Explanation panel, ride timeline (A7), pitstops, ruled-out list (A1) | ✅ | `components/planner/RideDetail.tsx` |
+| Engine room — working memory, chaining trace, rule base (A9) | ✅ | `components/engine` |
+| Remembered inputs + shareable ride links | ✅ | `state/persist.ts` |
+| Deploy: Vercel (static site + Python function at `/api`) | ✅ config | `vercel.json`, `api/index.py` |
+| Learning from ride ratings (P1), rule editor (P2), group rides (P3) | ⏳ phase 2 | — |
 
-Inspiration keywords: *"dark map dashboard"*, *"ride tracker app dribbble"*, *"weather app glassmorphism"*, *"timeline UI"*, *"Strava route card"*.
-
----
+No API keys are required anywhere: Open-Meteo, OpenFreeMap and OSRM are free and keyless.
 
 ## 5. Data note
 Route and pitstop data in `backend/app/data/` is a **hand-curated sample with approximate coordinates**.
