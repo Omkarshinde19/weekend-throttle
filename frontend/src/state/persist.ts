@@ -38,6 +38,7 @@ export function sanitize(raw: Raw, defaults: Inputs, today: string): Inputs {
 }
 
 export function loadInputs(defaults: Inputs, today: string): Inputs {
+  if (typeof window === "undefined") return defaults; // tests / non-browser
   let stored: Raw = {};
   try {
     stored = JSON.parse(localStorage.getItem(KEY) ?? "{}") as Raw;
