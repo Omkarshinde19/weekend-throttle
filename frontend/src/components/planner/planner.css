@@ -471,9 +471,13 @@
   }
 }
 
-.ride-map__canvas {
+/* More specific than maplibre's own `.maplibregl-map { position: relative }`, whose stylesheet is
+   lazy-loaded after this one and would otherwise collapse the map to zero height. */
+.ride-map > .ride-map__canvas {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .ride-map__fallback {
