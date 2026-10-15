@@ -50,7 +50,7 @@ deploying from the command line.
 ## Tests
 
 ```bash
-cd backend && .venv/bin/python -m pytest -q     # rule engine, API, Vercel entry
+cd backend && .venv/bin/python -m pytest -q     # rule engine, API, Vercel service entry
 cd frontend && npm test && npm run typecheck     # ridge generator, helpers, types
 ```
 
@@ -58,13 +58,18 @@ CI runs both on every push.
 
 ## Deploy (Vercel)
 
-The repo deploys as one Vercel project: the React build is served as static files and the FastAPI
-engine runs as a Python serverless function at `/api/*` (see [vercel.json](vercel.json) and
-[api/index.py](api/index.py)).
+The repo deploys as **one Vercel project with two [Services](https://vercel.com/docs/services)**
+(see [vercel.json](vercel.json)):
 
-**Option A — dashboard (no tokens):** on vercel.com choose *Add New → Project*, import
-`Omkarshinde19/weekend-throttle`, keep the settings Vercel reads from `vercel.json`, and click *Deploy*.
-Every push to `main` redeploys automatically.
+| Service | Root | Serves |
+|---|---|---|
+| `frontend` | `frontend/` | the Vite build, every path except `/api/*` |
+| `backend` | `backend/` | FastAPI ([backend/vercel_app.py](backend/vercel_app.py)) at `/api/*` |
+
+**Option A — dashboard (no tokens):** on vercel.com choose *Add New → Project* and import
+`Omkarshinde19/weekend-throttle`. Leave the root directory as `./` — Vercel reads `vercel.json` and shows it
+as a multi-service project. No environment variables are needed. Click *Deploy*; every push to `main`
+redeploys.
 
 **Option B — CLI:** put `VERCEL_TOKEN=…` in `.env` (create it at https://vercel.com/account/tokens), then
 
@@ -75,12 +80,12 @@ npx vercel --prod --token "$VERCEL_TOKEN"
 ## Layout
 
 ```
-api/index.py            Vercel entry — mounts the engine under /api
 backend/app/
   data/                 knowledge base: routes, road geometry, pitstops, bikes, rules (JSON)
   engine/               conditions DSL, forward chaining, solar maths, route facts, planner
   services/weather.py   Open-Meteo live weather or simulated
   main.py               FastAPI endpoints
+backend/vercel_app.py   Vercel backend service — mounts the engine under /api
 frontend/src/
   components/hero       Ladakh range, wordmark, parallax
   components/fx         weather particles, frost

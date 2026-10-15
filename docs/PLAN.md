@@ -156,7 +156,7 @@ trace        → every rule that fired, in order (for the engine room / debug dr
 | Explanation panel, ride timeline (A7), pitstops, ruled-out list (A1) | ✅ | `components/planner/RideDetail.tsx` |
 | Engine room — working memory, chaining trace, rule base (A9) | ✅ | `components/engine` |
 | Remembered inputs + shareable ride links | ✅ | `state/persist.ts` |
-| Deploy: Vercel (static site + Python function at `/api`) | ✅ config | `vercel.json`, `api/index.py` |
+| Deploy: Vercel Services (Vite frontend + FastAPI backend at `/api`) | ✅ config | `vercel.json`, `backend/vercel_app.py` |
 | Learning from ride ratings (P1), rule editor (P2), group rides (P3) | ⏳ phase 2 | — |
 
 No API keys are required anywhere: Open-Meteo, OpenFreeMap and OSRM are free and keyless.
