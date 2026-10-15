@@ -47,7 +47,7 @@ export function Hero({ onPlan }: { onPlan: () => void }) {
     const deva = glyphs.filter((g) => g.dataset.set === "deva");
     const move = reduced ? 0.25 : 1;
 
-    return onScrollFrame(({ y, vh }) => {
+    return onScrollFrame(({ y, vh, vw }) => {
       const el = section.current;
       if (!el) return;
       const p = range(y, el.offsetTop, el.offsetTop + el.offsetHeight - vh);
@@ -60,7 +60,9 @@ export function Hero({ onPlan }: { onPlan: () => void }) {
       // INDIA rises out from behind the peaks, then drifts away up the page.
       const rise = smoothstep(range(p, 0, 0.6));
       const exit = range(p, 0.74, 0.96);
-      const wy = lerp(7, -11, rise) - exit * 14;
+      // On narrow screens the central peak fills the frame, so the word starts higher.
+      const start = vw < 640 ? -4 : 7;
+      const wy = lerp(start, -11, rise) - exit * 14;
       word.current!.style.transform = `translate3d(-50%, calc(-50% + ${wy * move}vh), 0)`;
       word.current!.style.opacity = String(1 - exit);
 
