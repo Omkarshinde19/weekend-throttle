@@ -1,0 +1,3 @@
+# Runtime dependencies for the Vercel Python function (api/index.py).
+# Local development uses backend/requirements.txt, which also has uvicorn and pytest.
+fastapi>=0.115
