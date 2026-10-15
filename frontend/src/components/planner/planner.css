@@ -1378,6 +1378,9 @@
 }
 
 @media (max-width: 480px) {
+  .ride-map__legend {
+    display: none;
+  }
   .intents {
     grid-template-columns: repeat(3, 1fr);
   }
