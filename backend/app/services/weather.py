@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import logging
+import time
 import urllib.parse
 import urllib.request
 from datetime import datetime
@@ -52,41 +53,67 @@ def condition_from_code(code: int, precip_mm: float) -> str:
     return "clear"
 
 
-def fetch_live(lat: float, lng: float, at: datetime, timeout: float = 4.0) -> dict | None:
+_CACHE: dict[tuple, tuple[float, dict]] = {}
+CACHE_TTL_S = 600
+
+
+def _get_json(url: str, timeout: float, attempts: int = 2):
+    """GET with one retry — Open-Meteo occasionally answers 503 or is slow to generate."""
+    last: Exception | None = None
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(url, timeout=timeout) as resp:
+                return json.load(resp)
+        except Exception as exc:  # network down, 5xx, timeout
+            last = exc
+            if attempt + 1 < attempts:
+                time.sleep(0.4)
+    raise last  # type: ignore[misc]
+
+
+def fetch_live(lat: float, lng: float, at: datetime, timeout: float = 6.0) -> dict | None:
+    key = (round(lat, 2), round(lng, 2), at.strftime("%Y-%m-%dT%H"))
+    hit = _CACHE.get(key)
+    if hit and time.monotonic() - hit[0] < CACHE_TTL_S:
+        return hit[1]
+
+    day = at.strftime("%Y-%m-%d")
     params = {
         "latitude": lat,
         "longitude": lng,
         "hourly": "temperature_2m,precipitation,weather_code,visibility,wind_speed_10m",
         "timezone": "auto",
-        "past_days": 1,
-        "forecast_days": 16,
+        # Only the day we're planning for: a much smaller, faster response than a 16-day forecast.
+        "start_date": day,
+        "end_date": day,
     }
     url = f"{OPEN_METEO}?{urllib.parse.urlencode(params)}"
     try:
-        with urllib.request.urlopen(url, timeout=timeout) as resp:
-            payload = json.load(resp)
-    except Exception as exc:  # network down, rate limited, etc.
+        payload = _get_json(url, timeout)
+    except Exception as exc:
         log.warning("Open-Meteo request failed: %s", exc)
         return None
 
     hourly = payload.get("hourly", {})
-    key = at.strftime("%Y-%m-%dT%H:00")
+    hour = at.strftime("%Y-%m-%dT%H:00")
     try:
-        i = hourly["time"].index(key)
+        i = hourly["time"].index(hour)
     except (KeyError, ValueError):
         return None
 
     precip = float(hourly["precipitation"][i] or 0)
     visibility_m = hourly.get("visibility", [None] * (i + 1))[i]
-    return {
+    result = {
         "condition": condition_from_code(int(hourly["weather_code"][i] or 0), precip),
         "precip_mm": precip,
         "temp_c": hourly["temperature_2m"][i],
         "visibility_km": round(visibility_m / 1000, 1) if visibility_m is not None else 10.0,
         "wind_kmh": hourly["wind_speed_10m"][i],
         "source": "open-meteo",
-        "forecast_for": key,
+        "forecast_for": hour,
     }
+    _CACHE[key] = (time.monotonic(), result)
+    return result
 
 
 def resolve_weather(override: WeatherInput | None, lat: float, lng: float, at: datetime) -> dict:
