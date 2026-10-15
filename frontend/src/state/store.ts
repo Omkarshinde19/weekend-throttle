@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { api, ApiError } from "../api/client";
+import { loadInputs, saveInputs } from "./persist";
 import type {
   BikeType,
   Experience,
@@ -77,17 +78,19 @@ export function fmtMinutes(minutes: number): string {
 let controller: AbortController | null = null;
 let timer: ReturnType<typeof setTimeout> | null = null;
 
+const DEFAULTS: Inputs = {
+  intent: "photography",
+  bike: "cruiser",
+  experience: "intermediate",
+  pillion: false,
+  date: nextWeekendDate(),
+  minutes: 15 * 60 + 30,
+  budget: 5,
+  weather: "live",
+};
+
 export const useStore = create<State>((set, get) => ({
-  inputs: {
-    intent: "photography",
-    bike: "cruiser",
-    experience: "intermediate",
-    pillion: false,
-    date: nextWeekendDate(),
-    minutes: 15 * 60 + 30,
-    budget: 5,
-    weather: "live",
-  },
+  inputs: loadInputs(DEFAULTS, istToday()),
   result: null,
   allRoutes: [],
   loading: false,
@@ -97,6 +100,7 @@ export const useStore = create<State>((set, get) => ({
 
   set: (key, value) => {
     set((s) => ({ inputs: { ...s.inputs, [key]: value } }));
+    saveInputs(get().inputs);
     // Debounce so dragging a slider doesn't flood the engine.
     if (timer) clearTimeout(timer);
     timer = setTimeout(() => void get().fetch(), 160);
