@@ -25,6 +25,9 @@ export function App() {
 
   return (
     <>
+      <a className="skip-link" href="#planner">
+        Skip to the ride planner
+      </a>
       <div className="sky" aria-hidden />
       <WeatherFX plannerId="planner" />
       <Nav onPlan={goPlan} />
