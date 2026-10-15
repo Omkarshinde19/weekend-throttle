@@ -68,6 +68,26 @@ a {
   white-space: nowrap;
 }
 
+/* Keyboard users can jump past the 300vh hero. */
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  z-index: 100;
+  padding: 10px 18px;
+  border-radius: var(--r-pill);
+  background: var(--snow);
+  color: var(--night-1);
+  font-weight: 700;
+  font-size: 13px;
+  transform: translate(-50%, -160%);
+  transition: transform 0.25s var(--ease-out);
+}
+
+.skip-link:focus {
+  transform: translate(-50%, 0);
+}
+
 .eyebrow {
   font-family: var(--font-ui);
   font-size: 11px;
